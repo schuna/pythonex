@@ -73,7 +73,7 @@ class Account:
             timezone = TimeZone('UTC', 0, 0)
         self.timezone = timezone
 
-        self._balance = float(initial_balance)
+        self._balance = Account.validate_real_number(initial_balance, min_value=0)
 
     @property
     def account_number(self):
@@ -195,24 +195,3 @@ class Account:
         conf_code = self.generate_confirmation_code(self._transaction_codes['interest'])
         self._balance += interest
         return conf_code
-
-
-a = Account('A100', 'JY', 'Lee', initial_balance=100)
-print(a.balance)
-
-try:
-    a.deposit(-100)
-except ValueError as ex:
-    print(ex)
-
-print(a.deposit(100))
-print(a.balance)
-
-print(a.withdraw(150))
-print(a.balance)
-
-try:
-    a.withdraw(-150)
-except ValueError as ex:
-    print(ex)
-print(a.balance)
