@@ -1,5 +1,5 @@
 import unittest
-from project1 import TimeZone, Account
+from project1.project1 import TimeZone, Account
 from datetime import timedelta
 
 
