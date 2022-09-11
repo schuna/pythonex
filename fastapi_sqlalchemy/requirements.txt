@@ -1,0 +1,6 @@
+dependency-injector==4.40.0
+fastapi==0.82.0
+SQLAlchemy==1.4.41
+uvicorn==0.18.3
+PyYAML==6.0
+mariadb==1.1.4
